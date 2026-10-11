@@ -1,0 +1,20 @@
+stages:
+  prepare_data:
+    cmd: python -m src.pipeline
+    deps:
+      - src/pipeline.py
+      - src/contracts.py
+      - data/raw/telemetry.csv
+      - params.yaml
+    params:
+      - params.yaml:
+          - train_share
+          - random_seed
+          - split_strategy
+    outs:
+      - data/processed/train.parquet
+      - data/processed/test.parquet
+      - artifacts/preprocessor.joblib
+    metrics:
+      - data/processed/validation_report.json:
+          cache: false

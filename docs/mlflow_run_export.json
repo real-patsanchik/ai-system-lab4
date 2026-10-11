@@ -1,0 +1,20 @@
+{
+  "experiment": "lab4-data-pipeline",
+  "run_name": "telemetry-data-preparation",
+  "status": "generated_on_local_run",
+  "parameters": {
+    "split_strategy": "time_ordered",
+    "train_share": 0.8,
+    "numeric_imputer": "median",
+    "categorical_imputer": "most_frequent",
+    "scaler": "StandardScaler",
+    "encoder": "OneHotEncoder(handle_unknown=ignore)"
+  },
+  "metrics_note": "Exact row and feature metrics are written to data/processed/validation_report.json and MLflow after running python -m src.pipeline.",
+  "artifacts": [
+    "validation_report.json",
+    "preprocessor.joblib",
+    "train.parquet",
+    "test.parquet"
+  ]
+}

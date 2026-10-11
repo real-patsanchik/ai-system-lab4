@@ -1,0 +1,5 @@
+train_share: 0.8
+random_seed: 42
+split_strategy: time_ordered
+numeric_imputer: median
+categorical_imputer: most_frequent

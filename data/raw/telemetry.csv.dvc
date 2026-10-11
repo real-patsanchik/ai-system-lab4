@@ -1,0 +1,5 @@
+outs:
+- md5: 00ad3f7ec01cb561a2c89289ba47b5d5
+  size: 6729
+  hash: md5
+  path: telemetry.csv
