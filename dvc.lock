@@ -1,2 +1,43 @@
 schema: '2.0'
-stages: {}
+stages:
+  prepare_data:
+    cmd: python -m src.pipeline
+    deps:
+    - path: data/raw/telemetry.csv
+      hash: md5
+      md5: 00ad3f7ec01cb561a2c89289ba47b5d5
+      size: 6729
+    - path: params.yaml
+      hash: md5
+      md5: 2e777093a22890daa59cfcee2822b789
+      size: 121
+    - path: src/contracts.py
+      hash: md5
+      md5: 3a95120c1e4187fbc1f9a02d92cc54fe
+      size: 1162
+    - path: src/pipeline.py
+      hash: md5
+      md5: 29439f12cc07ee7adfd2762522c1ed6c
+      size: 5206
+    params:
+      params.yaml:
+        random_seed: 42
+        split_strategy: time_ordered
+        train_share: 0.8
+    outs:
+    - path: artifacts/preprocessor.joblib
+      hash: md5
+      md5: 4cb8492499a6fd0ed29f1f2c55e411d7
+      size: 3394
+    - path: data/processed/test.parquet
+      hash: md5
+      md5: 4bbbd903aec6295676f77f78aea6bffc
+      size: 5821
+    - path: data/processed/train.parquet
+      hash: md5
+      md5: 83ef00228cbf1f97794f71378237ac17
+      size: 7807
+    - path: data/processed/validation_report.json
+      hash: md5
+      md5: d6921177be58b01c66ed9e4337877959
+      size: 693

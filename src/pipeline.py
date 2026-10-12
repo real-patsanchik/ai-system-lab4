@@ -70,7 +70,6 @@ def run_pipeline(raw_path: Path = RAW, out_dir: Path = OUT, artifact_dir: Path =
     }
     (out_dir / "validation_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     if track_mlflow:
-        mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", (ROOT / "mlruns").as_uri()))
         mlflow.set_tracking_uri("sqlite:///mlflow.db")
         mlflow.set_experiment("lab4-data-pipeline")
         with mlflow.start_run(run_name="telemetry-data-preparation"):

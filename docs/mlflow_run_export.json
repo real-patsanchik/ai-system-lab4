@@ -1,20 +1,37 @@
 {
-  "experiment": "lab4-data-pipeline",
-  "run_name": "telemetry-data-preparation",
-  "status": "generated_on_local_run",
-  "parameters": {
+  "experiment_name": "lab4-data-pipeline",
+  "run_id": "51d7a976804148aeb6b9980a637133b4",
+  "status": "FINISHED",
+  "start_time_ms": 1791795223964,
+  "params": {
     "split_strategy": "time_ordered",
-    "train_share": 0.8,
+    "train_share": "0.8",
     "numeric_imputer": "median",
     "categorical_imputer": "most_frequent",
     "scaler": "StandardScaler",
     "encoder": "OneHotEncoder(handle_unknown=ignore)"
   },
-  "metrics_note": "Exact row and feature metrics are written to data/processed/validation_report.json and MLflow after running python -m src.pipeline.",
+  "metrics": {
+    "raw_rows": 122.0,
+    "clean_rows": 120.0,
+    "duplicate_rows_removed": 2.0,
+    "train_rows": 96.0,
+    "test_rows": 24.0,
+    "feature_count": 6.0
+  },
+  "tags": {
+    "mlflow.user": "rootda",
+    "mlflow.source.name": "C:\\Users\\rootda\\Documents\\Университет\\ai-system-lab4\\src\\pipeline.py",
+    "mlflow.source.type": "LOCAL",
+    "mlflow.source.git.commit": "1e330b9a331251ba347e3e7da33d4aeaf6a87618",
+    "mlflow.source.git.branch": "main",
+    "mlflow.source.git.repoURL": "https://github.com/real-patsanchik/ai-system-lab4.git",
+    "mlflow.runName": "telemetry-data-preparation"
+  },
   "artifacts": [
-    "validation_report.json",
     "preprocessor.joblib",
+    "test.parquet",
     "train.parquet",
-    "test.parquet"
+    "validation_report.json"
   ]
 }

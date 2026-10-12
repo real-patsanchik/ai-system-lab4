@@ -6,7 +6,7 @@ import mlflow
 from mlflow.tracking import MlflowClient
 
 ROOT = Path(__file__).resolve().parents[1]
-mlflow.set_tracking_uri((ROOT / "mlruns").as_uri())
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
 client = MlflowClient()
 experiments = client.search_experiments(filter_string="name = 'lab4-data-pipeline'")
 if not experiments:
