@@ -6,5 +6,4 @@ __pycache__/
 mlruns/
 .DS_Store
 .env
-.idea
-*.db
+.idea/
